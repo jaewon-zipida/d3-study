@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // domain : 변환 전 값
+      // range : 변환 후 값
+      // scalePoint : 간격에 맞게 값을 변경해줍니다.
+      const f1 = d3.scalePoint().range([0, 100]).domain([10, 12, 20, 30, 40]);
+      console.log(f1(12));
+
+      const f2 = d3.scalePoint().range([0, 100]).domain(["a", "b", "c", "d"]);
+      console.log(f2("b"));
+
+      const f3 = d3
+        .scalePoint()
+        .range([0, 100])
+        .domain(["a", "b", "c", "d"])
+        .padding(0.3);
+      console.log(f3("a"));
+
+      const f4 = d3.scalePoint().range([100, 200]).domain(["a", "b", "c", "d"]);
+      console.log(f4("a"));
+    </script>
+  </body>
+</html>
